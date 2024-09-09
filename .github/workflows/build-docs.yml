@@ -122,6 +122,9 @@ jobs:
       - build-docs
     runs-on: ubuntu-latest
     steps:
+      - uses: GitHubSecurityLab/actions-permissions/monitor@v1
+        with:
+          config: '{ "create_artifact": true, "enabled": true, "debug": false }'
       - name: Decide whether the needed jobs succeeded or failed
         uses: re-actors/alls-green@release/v1
         with:
